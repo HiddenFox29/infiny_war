@@ -8,6 +8,7 @@ let avengers = ["https://imgix.ranker.com/user_node_img/112/2239723/original/tho
 // добавлять мстителей будем тут
 // ...
 
+
 /**
  * infinityGauntlet перчятка бесконечности
  * выполняется при нажатии мышью в любом месте на страние
@@ -15,6 +16,7 @@ let avengers = ["https://imgix.ranker.com/user_node_img/112/2239723/original/tho
 function infinityGauntlet() {
     // убирать мстителей будем тут
     // ...
+
 }
 
 /**
@@ -25,6 +27,7 @@ function addAvenger(avenger) {
     let img = document.createElement('img');
     img.src = avenger;
     img.setAttribute('id', avenger);
+    img.classList.add('avenger');
     document.getElementById('avengers').appendChild(img);
 }
 
@@ -34,7 +37,8 @@ function addAvenger(avenger) {
  */
 function removeAvenger(avenger) {
     let avengerElement = document.getElementById(avenger);
-    avengerElement.setAttribute('class', 'd-none');
+    avengerElement.classList.remove('avenger');
+    avengerElement.classList.add('fade-out');
 }
 
 document.body.onclick = infinityGauntlet;
