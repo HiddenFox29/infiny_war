@@ -16,16 +16,24 @@ let avengers = ["https://imgix.ranker.com/user_node_img/112/2239723/original/tho
  */
 function infinityGauntlet() {
     // убирать мстителей будем тут
+    let dead = 0
     console.log(avengers.length)
     for(i=0; i < avengers.length; i++){
+
+
         let random = Math.random();
-        random = Math.round(random)
+        random = Math.round(random);
         if (random){
         removeAvenger(avengers[i]);
+        console.log(avengers.length)
+        dead++;
+        }
+        if (dead >= avengers.length / 2){
+            break
         }
     }
 }
-
+console.log(avengers.length)
 /**
  * Добавляет мстителя на страние
  * передавать нужно ссылку на мстителя
@@ -37,7 +45,7 @@ function addAvenger(avenger) {
     img.classList.add('avenger');
     document.getElementById('avengers').appendChild(img);
 }
-console.log('avenger')
+
 /**
  * Удаляет мстителя со страницы
  * передавать нужно ссылку на мстителя
